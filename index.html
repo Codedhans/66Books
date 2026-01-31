@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>66 Books: Testament Tapper</title>
+    <link rel="stylesheet" href="bible.css">
+</head>
+<body>
+
+    <section id="start-screen">
+<div class="logo">
+   <img src="images/hero.png" alt="icon img" class="icon">
+    <p>Are you ready for the ultimate Bible challenge?</p>
+</div>
+        
+       
+   <div class="controls">
+        <button id="start-button">Start Game</button>
+        <button id="settings-button">Settings</button>
+        <button id="high-score-button">High Scores</button>
+        <button id="how-to-play-button">How to play</button>
+        <h5>Powered By **CODEDHANS**</h5>
+<h5>v.1.00</h5>
+  </div>
+
+    </section>
+
+    <div id="game-container" class="hidden">
+        <div id="game-info">
+            <p>Score: <span id="score">0</span></p>
+            <p>Level: <span id="level">1</span></p>
+        </div>
+
+        <div id="book-box-container">
+            <div id="book-display">
+                <h2 id="book-name"></h2>
+            </div>
+            <div id="time-container">
+                <span id="time">12s</span>
+            </div>
+        </div>
+
+        <div id="card-container">
+            <button id="old-testament" class="card">Old Testament</button>
+            <button id="new-testament" class="card">New Testament</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+        <div id="message-card" class="card-message">
+            <h2 id="message-text"></h2>
+            <button id="next-level-btn" class="hidden">Next Level</button>
+            <button id="restart-btn" class="hidden">Restart</button>
+        </div>
+        </div>
+
+ 
+
+    <div id="settings-menu" class="menu hidden">
+        <h2>Settings</h2>
+        <label for="music-toggle">Background Music:</label>
+        <input type="checkbox" id="music-toggle" checked>
+        
+        <h3>Difficulty Level:</h3>
+        <label>
+            <input type="radio" name="difficulty" value="Easy" checked> Easy (15s/book)
+        </label><br>
+        <label>
+            <input type="radio" name="difficulty" value="Normal"> Normal (12s/book)
+        </label><br>
+        <label>
+            <input type="radio" name="difficulty" value="Hard"> Hard (9s/book)
+        </label><br>
+        <button id="close-settings">Close</button>
+    </div>
+
+    <div id="high-score-menu" class="menu hidden">
+        <h2>High Scores</h2>
+        <p>Highest Score Ever: <span id="highest-score">0</span></p>
+        <button id="clear-scores">Clear High Scores</button>
+        <button id="close-high-score">Close</button>
+    </div>
+<div class="back">
+   <a href="index.html">
+  <img src="images/quit.png" alt="quit icon">
+   </a>
+</div> 
+
+
+
+<div id="how-to-play-modal" class="hidden">
+    <div class="modal-content">
+        <h2>📚 How to Play: 66 Books</h2>
+        <div class="guide-text">
+            <p>The goal is simple: identify whether the displayed **Bible book** belongs to the **Old Testament** or the **New Testament**.</p>
+            
+            <h3>Game Flow</h3>
+            <ul>
+                <li><strong>Start:</strong> Click "Start Game" to begin the challenge.</li>
+                <li><strong>The Challenge:</strong> For each level, you must correctly identify **12 books**.</li>
+                <li><strong>Timing:</strong> Once the level starts, the **countdown timer** at the top right begins. This timer runs continuously for the entire level!</li>
+                <li><strong>Scoring:</strong> Each correct answer earns you **2 points**.</li>
+            </ul>
+
+            <h3>Rules & Difficulty</h3>
+            <p>You must complete the 12 books before the time runs out, or the game ends!</p>
+            <ul>
+                <li><strong>Difficulty:</strong> Set your challenge level in the **Settings** menu. Higher difficulty means less time to complete the 12 selections.</li>
+                <li><strong>Game Over:</strong> The game ends if you choose the wrong testament or if the timer reaches zero.</li>
+            </ul>
+            <p>Good luck and enjoy the challenge!</p>
+        </div>
+        <button id="close-how-to-play">Got It!</button>
+    </div>
+</div>
+    
+    <audio id="bg-music" src="midi/music.mp3" loop></audio>
+
+    <script src="bible.js"></script>
+</body>
+</html>

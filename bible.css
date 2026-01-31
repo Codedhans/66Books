@@ -1,0 +1,397 @@
+/* ==================================== */
+/* 1. Base & Mobile Styles (Default)    */
+/* ==================================== */
+
+body {
+    /* Background and layout for all devices */
+    font-family: serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: 100%; 
+    background: linear-gradient(#000000,#070541);
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-size: 16px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#game-container {
+    /* Max width for smaller devices */
+    width: 95%;
+    min-height: 55vh; 
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    /* Link your UI background image here: */
+     background: url('images/hero1.png') no-repeat center center; 
+    background-size: 100%; 
+    
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between; 
+}
+
+/* --- Info Bar (Score, Level, Time) --- */
+#game-info {
+    position: static; 
+    width: 100%;
+    text-align: left;
+    color: #f5e6b7;
+    font-size: 1em;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; 
+    order: 1; 
+}
+
+#game-info p {
+    margin: 0;
+}
+
+#time-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: darkred;
+    color: #f5e6b7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    order: 2;
+}
+
+/* --- Book Display (Center Box) --- */
+#book-box-container {
+    position: relative;
+    margin-top: 10vh; 
+    margin-bottom: 5vh;
+    order: 3; 
+}
+
+#book-display {
+    background-color: rgba(200, 200, 200, 0.7);
+    border: 3px solid none;
+    padding: 20px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 2px gold;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#book-name {
+    margin: 0;
+    font-size: 1.9em; 
+    color: #000;
+}
+
+/* --- Card Buttons --- */
+#card-container{
+    display: flex;
+    flex-direction: ; 
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    order: 4; 
+}
+
+.card {
+    padding: 12px 15px;
+    font-size: 1.1em;
+    border: 4px solid gold;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #fff;
+    font-weight: bold;
+    width: 100%; 
+    box-sizing: border-box; 
+    background: linear-gradient(#4063fff3, blue);
+    
+}
+
+#new-testament {
+   color: pink;
+}
+
+.card:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px #333;
+}
+
+
+/* --- Start/Menu Screen & Modal Styling (Mobile) --- */
+
+.icon{
+   width: 200px; 
+   height: auto;
+   border-radius: 40px;
+}
+
+#start-screen, .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#start-screen h2, .menu h2 {
+    font-size: 2em;
+    color: #f5e6b7;
+    margin-bottom: 20px;
+}
+
+#start-screen button, .menu button {
+    width: 50%; 
+    max-width: 300px;
+    margin: 10px 0;
+    padding:  15px 20px;
+    font-size: 1.1em;
+    background: linear-gradient(khaki, gold);
+    color: #000;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+#start-screen h5{
+   color: grey;
+   margin: 15px;
+}
+
+/* --- How To Play Modal Specific Styles --- */
+
+#how-to-play-modal {
+    /* Ensures the modal content itself is centered */
+    background-color: rgba(0, 0, 0, 0.95); /* Slightly darker background for focus */
+    display: nne; /* Controlled by the .hidden class */
+}
+
+.modal-content {
+    background-color: #fcf6e7; /* Light background for readability */
+    color: #2c2c2c;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px; /* Max width for content on large screens */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    max-height: 80vh; /* Prevent content from flowing off the screen */
+    overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+.modal-content h2 {
+    color: #5c3c1e; /* Darker heading color */
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0;
+}
+
+.modal-content h3 {
+    color: #a05a4d;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.guide-text ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#close-how-to-play {
+    display: block;
+    margin: 20px auto;
+    width: 50%; /* Full width button inside modal */
+    background-color: #ff0073;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+
+/* ==================================== */
+/* 2. Tablet & Desktop Overrides (@media) */
+/* ==================================== */
+
+@media (min-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    #game-container {
+        width: 300px; 
+        min-height: 100px;
+        padding: 30px;
+    }
+
+    /* --- Info Bar (Desktop) --- */
+    #game-info {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: auto;
+        display: block; 
+        text-align: left;
+        order: 0;
+    }
+    
+
+    #time-container {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 1em;
+        order: 0;
+    }
+    
+    /* --- Book Display (Desktop) --- */
+    #book-box-container {
+        margin-top: 15vh; 
+        margin-bottom: 10px;
+    }
+    
+    #book-name {
+        font-size: 1.5em;
+    }
+
+    /* --- Card Buttons (Desktop) --- */
+    #card-container {
+        flex-direction: row; 
+        gap: 30px;
+        margin-top: 10px;
+    }
+    
+    .card {
+        min-width: 250px; 
+        width: auto; 
+        padding: 10px 20px;
+        font-size: 1.2em;
+    }
+    .icon{
+   width: 200px; 
+   height: auto;
+   border-radius: 40px;
+}
+    /* --- Menu Screen Styling (Desktop) --- */
+    
+    #start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: ;
+    background: linear-gradient(black, navy, black);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#start-screen h2, .menu h2 {
+    font-size: 1em;
+    color: #f5e6b7;
+    margin-bottom: 10px;
+}
+
+#start-screen button, .menu button {
+    width: 50%; 
+    max-width: 300px;
+    margin: 5px 0;
+    padding:  10px 15px;
+    font-size: 1em;
+    background: linear-gradient(khaki, gold);
+    color: #000;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+#start-screen h5{
+   color: grey;
+   margin: 10px;
+}
+    /* --- How To Play Modal (Desktop) --- */
+    .modal-content {
+        padding: 40px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.8em;
+    }
+}
+
+#restart-btn, #next-level-btn{
+  background: red;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  
+  
+}
+next-level-btn{
+ background: gold;  
+ color: #000;
+}
+
+#overlay{
+text-align: center;
+   position: absolute;
+   top: 20%;
+   left: 0;
+   background: rgba(10,10,10,0.9);
+   padding: 50px;
+   margin: ;
+   color: #fff;
+   height: 50vh;
+   min-width: 200px;
+   max-width: 100vw;
+   
+}
+.back{
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 2;
+   margin: 5px;
+}
+.back a{
+   text-decoration: none;
+   border-radius: 5px;
+   text-align: center;
+}
+.back img{
+   width: 20px;
+   height: auto;
+   cursor: pointer;
+   padding: 5px;
+   border-radius: 50%;
+}
